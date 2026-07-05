@@ -1,0 +1,93 @@
+/* Variáveis de acessibilidade controladas por CSS puro (Checkbox Hack) */
+:root {
+  --font-multiplier: 1rem;
+  --bg-primary: #f0fdf4; /* Verde suave, transmite segurança e tranquilidade */
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --border-color: #cbd5e1;
+  --accent-color: #16a34a;
+  --accent-hover: #15803d;
+  --focus-outline: #16a34a;
+}
+
+/* Regras de Alto Contraste (Ativadas via checkbox) */
+#toggle-contrast:checked ~ .app-wrapper {
+  --bg-primary: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #ffffff;
+  --text-muted: #e2e8f0;
+  --border-color: #ffffff;
+  --accent-color: #facc15; /* Amarelo de alto contraste */
+  --accent-hover: #eab308;
+  --focus-outline: #facc15;
+}
+
+/* Regras de Fonte Grande (Ativadas via checkbox) */
+#toggle-font:checked ~ .app-wrapper {
+  --font-multiplier: 1.25rem;
+}
+
+/* Aplicando as variáveis gerais */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-size: var(--font-multiplier);
+  transition: background-color 0.3s, color 0.3s, font-size 0.2s;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Estilos personalizados para os cartões de dicas explicativas (Accordion) */
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Foco acessível visível para navegação por teclado */
+a:focus, button:focus, input:focus, details summary:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* CSS puro para animação do botão de abrir/fechar */
+details summary svg {
+  transition: transform 0.2s ease;
+}
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+/* Classes auxiliares para usar as variáveis do CSS */
+.custom-bg-primary { background-color: var(--bg-primary); }
+.custom-bg-card { background-color: var(--bg-card); }
+.custom-text-main { color: var(--text-main); }
+.custom-text-muted { color: var(--text-muted); }
+.custom-border { border-color: var(--border-color); }
+.custom-accent-bg { background-color: var(--accent-color); }
+.custom-accent-text { color: var(--accent-color); }
+.custom-accent-hover:hover { background-color: var(--accent-hover); }
+
+/* Estilos do Quiz usando CSS puro */
+.quiz-option input[type="radio"]:checked + label {
+  border-color: var(--accent-color);
+  background-color: rgba(22, 163, 74, 0.1);
+}
+#toggle-contrast:checked ~ .app-wrapper .quiz-option input[type="radio"]:checked + label {
+  background-color: rgba(250, 204, 21, 0.2);
+}
+
+/* Mostrar explicações das respostas do Quiz quando selecionadas */
+.quiz-q1-a1:checked ~ .feedback-q1-a1,
+.quiz-q1-a2:checked ~ .feedback-q1-a2,
+.quiz-q2-a1:checked ~ .feedback-q2-a1,
+.quiz-q2-a2:checked ~ .feedback-q2-a2,
+.quiz-q3-a1:checked ~ .feedback-q3-a1,
+.quiz-q3-a2:checked ~ .feedback-q3-a2 {
+  display: block !important;
+}

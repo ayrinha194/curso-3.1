@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Seguro - Guia de Segurança para a Terceira Idade</title>
+  
+  <!-- Tailwind CSS para design responsivo rápido -->
+  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  
+  <!-- Conexão com o seu arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- Inputs invisíveis para controle de acessibilidade por CSS Puro (Checkbox Hack) -->
+  <input type="checkbox" id="toggle-contrast" class="sr-only">
+  <input type="checkbox" id="toggle-font" class="sr-only">
+
+  <!-- Wrapper Geral do Aplicativo -->
+  <div class="app-wrapper flex-grow flex flex-col custom-bg-primary custom-text-main transition-all duration-300">
+    
+    <!-- BARRA DE ACESSIBILIDADE FIXA -->
+    <div class="sticky top-0 z-50 bg-white dark:bg-zinc-900 shadow-md border-b custom-border py-3 px-4">
+      <div class="max-w-4xl mx-auto flex flex-wrap gap-4 justify-between items-center">
+        <!-- Logotipo Simples e Acolhedor -->
+        <div class="flex items-center gap-3">
+          <span class="text-3xl" aria-hidden="true">🛡️</span>
+          <div>
+            <h1 class="font-extrabold text-xl md:text-2xl tracking-tight">Digital Seguro</h1>
+            <p class="text-xs uppercase tracking-wider font-semibold custom-text-muted">Acessibilidade para a Terceira Idade</p>
+          </div>
+        </div>
+        
+        <!-- Controles de Acessibilidade -->
+        <div class="flex flex-wrap gap-3 items-center" role="toolbar" aria-label="Controles de Acessibilidade">
+          <!-- Botão Aumentar Fonte -->
+          <label for="toggle-font" class="flex items-center gap-2 px-4 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold rounded-lg border-2 border-zinc-300 cursor-pointer text-sm md:text-base select-none shadow-sm transition active:scale-95" tabindex="0" role="button" aria-pressed="false" onkeydown="if(event.key === ' ' || event.key === 'Enter') { document.getElementById('toggle-font').click(); }">
+            <span class="text-xl" aria-hidden="true">🔎</span>
+            <span>Aumentar Letra</span>
+          </label>
+
+          <!-- Botão Alto Contraste -->
+          <label for="toggle-contrast" class="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold rounded-lg border-2 border-zinc-600 cursor-pointer text-sm md:text-base select-none shadow-sm transition active:scale-95" tabindex="0" role="button" aria-pressed="false" onkeydown="if(event.key === ' ' || event.key === 'Enter') { document.getElementById('toggle-contrast').click(); }">
+            <span class="text-xl" aria-hidden="true">🌓</span>
+            <span>Alto Contraste</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+      
+      <!-- Introdução Acolhedora -->
+      <section class="mb-10 text-center md:text-left">
+        <div class="custom-bg-card p-6 md:p-8 rounded-2xl shadow-md border-2 custom-border">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4 custom-accent-text">Olá, seja muito bem-vindo!</h2>
+          <p class="text-lg md:text-xl leading-relaxed custom-text-muted">
+            A internet é maravilhosa para conversar com a família, fazer compras e ver notícias. Este espaço foi criado especialmente para você aprender a navegar com <strong>total segurança e tranquilidade</strong>. 
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 items-center justify-center md:justify-start text-sm font-semibold custom-text-muted">
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300">Letras Grandes</span>
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300">Fácil de Usar</span>
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-300">Sem Senhas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 1: OS 4 PILARES DA SEGURANÇA (ACORDEÕES ACESSÍVEIS) -->
+      <section class="mb-12" aria-labelledby="dicas-title">
+        <h2 id="dicas-title" class="text-2xl md:text-3xl font-black mb-6 flex items-center gap-3">
+          <span class="text-3xl" aria-hidden="true">💡</span> Dicas Práticas de Segurança
+        </h2>
+        <p class="text-base md:text-lg mb-6 custom-text-muted">Clique nos títulos abaixo para ler as dicas explicadas de forma simples:</p>
+
+        <div class="space-y-4">
+          
+          <!-- Dica 1 -->
+          <details class="group custom-bg-card rounded-xl border-2 custom-border shadow-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 md:p-6 font-bold text-lg md:text-xl focus:bg-zinc-50 select-none">
+              <span class="flex items-center gap-3">
+                <span class="text-2xl" aria-hidden="true">🔑</span>
+                <span>1. Como criar senhas seguras e fáceis de lembrar</span>
+              </span>
+              <svg class="w-6 h-6 shrink-0 custom-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="p-6 border-t custom-border bg-zinc-50/50 custom-text-muted leading-relaxed text-base md:text-lg space-y-4">
+              <p>Evite usar datas de nascimento, nomes de netos ou sequências como "123456". Esses dados são muito fáceis de adivinhar!</p>
+              <div class="bg-green-100/50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                <strong class="text-green-800 block mb-1">Dica de Ouro: "Frase Secreta"</strong>
+                Pense em uma música, um prato de comida ou um lugar que você adora e mude algumas letras por números. 
+                <br><em>Exemplo:</em> <strong>"BoloDeCenoura10!"</strong> é uma senha excelente, longa e impossível de esquecer!
+              </div>
+            </div>
+          </details>
+
+          <!-- Dica 2 -->
+          <details class="group custom-bg-card rounded-xl border-2 custom-border shadow-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 md:p-6 font-bold text-lg md:text-xl focus:bg-zinc-50 select-none">
+              <span class="flex items-center gap-3">
+                <span class="text-2xl" aria-hidden="true">💬</span>
+                <span>2. Cuidado com o Golpe do WhatsApp clonado</span>
+              </span>
+              <svg class="w-6 h-6 shrink-0 custom-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="p-6 border-t custom-border bg-zinc-50/50 custom-text-muted leading-relaxed text-base md:text-lg space-y-4">
+              <p>Se um filho, neto ou amigo mandar mensagem dizendo que <strong>mudou de número</strong> e precisa de dinheiro emprestado com urgência, <strong>não faça nenhuma transferência de imediato</strong>!</p>
+              <div class="bg-amber-100/50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                <strong class="text-amber-800 block mb-1">Como se proteger?</strong>
+                Ligue imediatamente para o número antigo daquela pessoa (por ligação normal, não pelo WhatsApp) para confirmar se a história é verdadeira antes de enviar qualquer valor.
+              </div>
+            </div>
+          </details>
+
+          <!-- Dica 3 -->
+          <details class="group custom-bg-card rounded-xl border-2 custom-border shadow-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 md:p-6 font-bold text-lg md:text-xl focus:bg-zinc-50 select-none">
+              <span class="flex items-center gap-3">
+                <span class="text-2xl" aria-hidden="true">📞</span>
+                <span>3. Ligações de Banco (O golpe da "Falsa Central")</span>
+              </span>
+              <svg class="w-6 h-6 shrink-0 custom-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="p-6 border-t custom-border bg-zinc-50/50 custom-text-muted leading-relaxed text-base md:text-lg space-y-4">
+              <p>Um atendente muito educado liga dizendo que encontraram uma compra suspeita no seu cartão e pede para você digitar ou falar sua senha para cancelar a compra.</p>
+              <div class="bg-red-100/50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                <strong class="text-red-800 block mb-1">Atenção Máxima!</strong>
+                <strong>Bancos nunca, jamais pedem sua senha por telefone.</strong> Se receber uma ligação assim, desligue o telefone imediatamente. Se ficar na dúvida, vá até a sua agência física ou ligue no número que está atrás do seu cartão.
+              </div>
+            </div>
+          </details>
+
+          <!-- Dica 4 -->
+          <details class="group custom-bg-card rounded-xl border-2 custom-border shadow-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 md:p-6 font-bold text-lg md:text-xl focus:bg-zinc-50 select-none">
+              <span class="flex items-center gap-3">
+                <span class="text-2xl" aria-hidden="true">🔗</span>
+                <span>4. Links falsos em mensagens e promoções</span>
+              </span>
+              <svg class="w-6 h-6 shrink-0 custom-accent-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="p-6 border-t custom-border bg-zinc-50/50 custom-text-muted leading-relaxed text-base md:text-lg space-y-4">
+              <p>Evite clicar em links que chegam por SMS, WhatsApp ou redes sociais prometendo prêmios, dinheiro do governo (como valores a receber) ou descontos milagrosos.</p>
+              <div class="bg-amber-100/50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                <strong class="text-amber-800 block mb-1">O que fazer?</strong>
+                Apague a mensagem. Lembre-se do ditado popular: <em>"Quando a esmola é demais, o santo desconfia."</em> Empresas reais não dão prêmios caros através de mensagens de texto desconhecidas.
+              </div>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO 2: QUIZ DE TREINAMENTO (INTERATIVO COM CSS) -->
+      <section class="mb-12 custom-bg-card p-6 md:p-8 rounded-2xl border-2 custom-border shadow-md" aria-labelledby="quiz-title">
+        <div class="text-center mb-6">
+          <span class="text-4xl" aria-hidden="true">🏆</span>
+          <h2 id="quiz-title" class="text-2xl md:text-3xl font-black mt-2">Jogo do Conhecimento Seguro</h2>
+          <p class="text-base md:text-lg custom-text-muted mt-1">Responda às perguntas abaixo e veja na hora se você acertou!</p>
+        </div>
+
+        <form class="space-y-8" onsubmit="event.preventDefault();">
+          
+          <!-- Pergunta 1 -->
+          <div class="border-b custom-border pb-6">
+            <h3 class="font-bold text-lg md:text-xl mb-3">Pergunta 1: Um número desconhecido mandou mensagem dizendo ser seu neto pedindo dinheiro urgente. O que você faz?</h3>
+            
+            <div class="grid gap-3 mt-3">
+              <div class="quiz-option relative">
+                <input type="radio" id="q1-o1" name="question1" class="quiz-q1-a1 sr-only">
+                <label for="q1-o1" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🔴 A) Transfiro o dinheiro rápido para ajudar o neto.
+                </label>
+              </div>
+
+              <div class="quiz-option relative">
+                <input type="radio" id="q1-o2" name="question1" class="quiz-q1-a2 sr-only">
+                <label for="q1-o2" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🟢 B) Não envio nada. Ligo para o número antigo do meu neto para confirmar.
+                </label>
+              </div>
+
+              <!-- Feedbacks Dinâmicos (controlados por CSS puro via seleção das opções acima) -->
+              <div class="feedback-q1-a1 hidden mt-3 p-4 bg-red-100 border border-red-300 rounded-xl text-red-900 font-medium">
+                ❌ <strong>Atenção!</strong> Essa opção é perigosa. Golpistas usam a pressa para nos assustar. Sempre confirme por telefone antes de transferir qualquer valor!
+              </div>
+              <div class="feedback-q1-a2 hidden mt-3 p-4 bg-green-100 border border-green-300 rounded-xl text-green-900 font-medium">
+                ✅ <strong>Parabéns! Resposta Correta!</strong> Confirmar com uma ligação de voz pelo número antigo do familiar é a melhor e mais segura barreira contra esse golpe.
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="border-b custom-border pb-6">
+            <h3 class="font-bold text-lg md:text-xl mb-3">Pergunta 2: Se alguém ligar dizendo ser do seu banco e pedir sua senha de segurança. O que você deve fazer?</h3>
+            
+            <div class="grid gap-3 mt-3">
+              <div class="quiz-option relative">
+                <input type="radio" id="q2-o1" name="question2" class="quiz-q2-a1 sr-only">
+                <label for="q2-o1" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🟢 A) Desligo a ligação imediatamente. Bancos nunca pedem senha por telefone.
+                </label>
+              </div>
+
+              <div class="quiz-option relative">
+                <input type="radio" id="q2-o2" name="question2" class="quiz-q2-a2 sr-only">
+                <label for="q2-o2" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🔴 B) Falo a senha com educação, já que a pessoa se identificou como funcionária do banco.
+                </label>
+              </div>
+
+              <!-- Feedbacks Dinâmicos -->
+              <div class="feedback-q2-a1 hidden mt-3 p-4 bg-green-100 border border-green-300 rounded-xl text-green-900 font-medium">
+                ✅ <strong>Excelente! Resposta Correta!</strong> O banco possui todos os seus sistemas e nunca precisa perguntar sua senha por ligação. Se pedirem, é golpe!
+              </div>
+              <div class="feedback-q2-a2 hidden mt-3 p-4 bg-red-100 border border-red-300 rounded-xl text-red-900 font-medium">
+                ❌ <strong>Perigo!</strong> Lembre-se: golpistas sabem ser muito simpáticos e fingem ser do banco perfeitamente. Nunca informe sua senha a ninguém!
+              </div>
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="pb-2">
+            <h3 class="font-bold text-lg md:text-xl mb-3">Pergunta 3: Qual destas senhas é a mais segura e fácil de lembrar ao mesmo tempo?</h3>
+            
+            <div class="grid gap-3 mt-3">
+              <div class="quiz-option relative">
+                <input type="radio" id="q3-o1" name="question3" class="quiz-q3-a1 sr-only">
+                <label for="q3-o1" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🔴 A) "123456" ou o meu ano de nascimento.
+                </label>
+              </div>
+
+              <div class="quiz-option relative">
+                <input type="radio" id="q3-o2" name="question3" class="quiz-q3-a2 sr-only">
+                <label for="q3-o2" class="block p-4 rounded-xl border-2 custom-border cursor-pointer font-semibold text-base md:text-lg hover:bg-zinc-50 transition active:scale-[0.98]">
+                  🟢 B) "CafedamanhaSaboroso10!" (uma frase que eu gosto, com letras e números).
+                </label>
+              </div>
+
+              <!-- Feedbacks Dinâmicos -->
+              <div class="feedback-q3-a1 hidden mt-3 p-4 bg-red-100 border border-red-300 rounded-xl text-red-900 font-medium">
+                ❌ <strong>Atenção!</strong> Senhas simples ou datas de aniversário são as primeiras coisas que os invasores tentam descobrir. Evite!
+              </div>
+              <div class="feedback-q3-a2 hidden mt-3 p-4 bg-green-100 border border-green-300 rounded-xl text-green-900 font-medium">
+                ✅ <strong>Sensacional! Resposta Correta!</strong> Criar uma frase secreta misturando maiúsculas, minúsculas e números torna sua senha super forte e fácil de lembrar.
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- SEÇÃO 3: NÚMEROS ÚTEIS E DE AJUDA -->
+      <section class="grid md:grid-cols-2 gap-6" aria-labelledby="ajuda-title">
+        <div class="custom-bg-card p-6 md:p-8 rounded-2xl border-2 custom-border shadow-md">
+          <h2 id="ajuda-title" class="text-2xl font-black mb-4 flex items-center gap-2">
+            <span class="text-3xl" aria-hidden="true">☎️</span> Telefones Importantes
+          </h2>
+          <p class="text-base md:text-lg custom-text-muted mb-4">Caso você desconfie de um golpe ou tenha sido vítima de um, ligue para estes canais oficiais de ajuda:</p>
+          
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 bg-red-50 p-3 rounded-lg border border-red-200">
+              <span class="text-2xl" aria-hidden="true">🚨</span>
+              <div>
+                <strong class="text-red-900 block text-lg">Polícia Militar - Ligue 190</strong>
+                <span class="text-xs text-red-700 font-semibold uppercase">Urgências e Golpes em andamento</span>
+              </div>
+            </li>
+            <li class="flex items-center gap-3 bg-blue-50 p-3 rounded-lg border border-blue-200">
+              <span class="text-2xl" aria-hidden="true">🏢</span>
+              <div>
+                <strong class="text-blue-900 block text-lg">Disque Direitos Humanos - Ligue 100</strong>
+                <span class="text-xs text-blue-700 font-semibold uppercase">Atendimento ao idoso</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="custom-bg-card p-6 md:p-8 rounded-2xl border-2 custom-border shadow-md flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl font-black mb-4 flex items-center gap-2">
+              <span class="text-3xl" aria-hidden="true">🤝</span> Lembrete com Carinho
+            </h2>
+            <p class="text-base md:text-lg leading-relaxed custom-text-muted">
+              Não tenha vergonha de pedir ajuda. Os golpistas usam termos complicados de propósito para nos confundir. Sempre que se sentir inseguro ou desconfiar de algo, chame um filho, neto, vizinho ou amigo próximo para verificar com você.
+            </p>
+          </div>
+          <div class="mt-6 border-t custom-border pt-4 text-center">
+            <span class="font-extrabold text-lg custom-accent-text">Sua segurança vem sempre em primeiro lugar!</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RODAPÉ ACESSÍVEL -->
+    <footer class="bg-zinc-900 text-white py-8 border-t-4 custom-border mt-12 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="text-lg font-bold mb-2">🛡️ Digital Seguro - Manual do Idoso Conectado</p>
+        <p class="text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
+          Este site foi desenhado seguindo as diretrizes de acessibilidade para garantir que todas as pessoas possam navegar, ler e aprender com conforto, clareza e independência.
+        </p>
+        <div class="mt-4 text-xs text-zinc-500">
+          Feito com carinho para proteger quem sempre cuidou de nós.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
